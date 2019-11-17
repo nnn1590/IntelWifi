@@ -1,10 +1,16 @@
 os: osx
-
 osx_image: xcode9.2
-
 script:
- - curl -LO https://github.com/phracker/MacOSX-SDKs/releases/download/10.14-beta4/MacOSX10.12.sdk.tar.xz
- - tar zxf ./MacOSX10.12.sdk.tar.xz
- - sudo mv MacOSX10.12.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
- - make build
- - find . -name *kext
+- curl -LO https://github.com/phracker/MacOSX-SDKs/releases/download/10.14-beta4/MacOSX10.12.sdk.tar.xz
+- tar xf ./MacOSX10.12.sdk.tar.xz
+- sudo mv MacOSX10.12.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+- make build
+- tar czf IntelWifi.tar.gz /Users/travis/Library/Developer/Xcode/DerivedData/IntelWifi-gfhnygtxrrxdvrdpljclrvgbyeiv/Build/Products/Debug/IntelWifi.kext
+deploy:
+  provider: releases
+  api_key:
+    secure: cksJYDqTh716bKrwnHB0BHFf7EcmoEaP38pb21VG313ZpXb8nragJ7lWeacDqoTJR3fPwqxzs+y4yezFz8JuyupoOqf0GEPKDXdS9nN0OTa+256s3/QG7Cn3AMHQAWPnXVNTW+egnxKBzz0ARhg4UdLVoKm8xZGz5F51JKHOS2ahfG4Tp+CT4jzcBtttsQyhbsKo/RmsgSDH3tqleX7Ao2K+jrbLcwTwG8LfbkqgJ7si434xJ5/ur2FCIXOqeXF6izo4YLsZLcro9RJvzdls+HqcOe2O6Id054URpKj2xqSmS5c45Js7CmSAl+hRySKSbR3T8ZLO2rXp63Esq/G0iJcBU/IbwrPQfIuvhC7SZcDC171u4t9otDRvSjcs2ZoEW8AiyiS0c7ua/cTXSEB2D0SfxL9uXMNgWqJvVYhF8ndtg4xIPrplcaSJBjBHuxgQTvHEw5fT7Uu7tgxLMbZ6uVsUbHS5xvSd5HsOvmXz9Nx/6VOU1nYcH0+nubBNB8LZsOw5dCoQd7dACOaiN7kY9QYylV6sO7X876vIy5Wm169fvw4HKQShfydbzgZ+vfzkVd8oi/ntPTLBBGg/WyZ67ogNi6tcIHh6tyDVZh+NcdU2BiGN+tDHNayTbfwA2Vupb+gwot1A9qtOy5+PxSSFfKlIp0eD0fC80plWIFU8Kk8=
+  file: IntelWifi.tar.gz
+  on:
+    repo: nnn1590/IntelWifi
+    branch: travis
