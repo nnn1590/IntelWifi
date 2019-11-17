@@ -1,9 +1,6 @@
 os: osx
 osx_image: xcode9.2
 script:
-- curl -LO https://github.com/phracker/MacOSX-SDKs/releases/download/10.14-beta4/MacOSX10.12.sdk.tar.xz
-- tar xf ./MacOSX10.12.sdk.tar.xz
-- sudo mv MacOSX10.12.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
 - make build
 - tar czf IntelWifi.tar.gz /Users/travis/Library/Developer/Xcode/DerivedData/IntelWifi-gfhnygtxrrxdvrdpljclrvgbyeiv/Build/Products/Debug/IntelWifi.kext
 deploy:
