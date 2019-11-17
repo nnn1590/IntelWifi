@@ -6,6 +6,5 @@ script:
  - curl -LO https://github.com/phracker/MacOSX-SDKs/releases/download/10.14-beta4/MacOSX10.14.sdk.tar.xz
  - tar zxf ./MacOSX10.14.sdk.tar.xz
  - sudo mv MacOSX10.14.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
- - make
+ - make build
  - find . -name *kext
- 
