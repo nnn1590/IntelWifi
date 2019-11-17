@@ -1,10 +1,10 @@
 os: osx
 
-osx_image: xcode11.2
+osx_image: xcode9.2
 
 script:
- - curl -LO https://github.com/phracker/MacOSX-SDKs/releases/download/10.14-beta4/MacOSX10.14.sdk.tar.xz
- - tar zxf ./MacOSX10.14.sdk.tar.xz
- - sudo mv MacOSX10.14.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+ - curl -LO https://github.com/phracker/MacOSX-SDKs/releases/download/10.14-beta4/MacOSX10.12.sdk.tar.xz
+ - tar zxf ./MacOSX10.12.sdk.tar.xz
+ - sudo mv MacOSX10.12.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
  - make build
  - find . -name *kext
