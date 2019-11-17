@@ -2,12 +2,5 @@ os: osx
 osx_image: xcode9.2
 script:
 - make build
-- tar czf IntelWifi.tar.gz /Users/travis/Library/Developer/Xcode/DerivedData/IntelWifi-gfhnygtxrrxdvrdpljclrvgbyeiv/Build/Products/Debug/IntelWifi.kext
-deploy:
-  provider: releases
-  api_key:
-    secure: FSWKBjVDzpLeme9HyrOVYj78tENYAuFkd1bURvKcyZtjL+8E9BEpdHW4jDirXqrcPwRHTeWBp3YPZoyEpgPXTLCiq8TTofTbS3fU/3IP7pjiTPzr0ThJSIaJIiGgIh6ZESz2NliGXeF4axw+1QPPrVipMGnSbp98UE7/KUrzKobrsssbcaAQMly54HC4mSb4SY7aZp9Lbk2fBhOVVa7mztGDsLDoKJT/PTl0BbDBE8bcmbcmKKUDYJRno329p2apX2hlGQN21hNge01PqIEkVHNyUitMv2+QWV4dJpS8eEZEzBpGBp/EQYK0FmhZdzSw1vJJWtDU3ki+oq+aym4ED2eVzOkJTocPCekNJwmJ1syIxRvQTmNp8IRqDjMsPbDBPRdrwInR8KV3F4e3q+FMg6FJUyAS5tgqsO6FtyyMRHKxLy1kdROrhUdspPC8DSDP473GddeTkInnj8WaKH/Q4jcm11Q3iNHp3emncS+5sOH+EUvsR57YDqbkrcq7ZhXNhGUtbmyZmjjT3kJlxUVMaJIoV/qBerD/5gP8x5nkOeGig88B7xYl5pTVSF0T7jkZeo2Z5c5tnned24uBxKPGiL3Mdt0pz7jqxixiTEnLp8NjLxOZShmFguBx3Epq1l1/OYoIhFCrylPwUDtyeUBx4G0qDp4Z2NBCjn9G++zJHRk=
-  file: IntelWifi.tar.gz
-  on:
-    repo: nnn1590/IntelWifi
-    branch: travis
+- echo 'IntelWifi.tar.xz (base64):'
+- tar cJf - /Users/travis/Library/Developer/Xcode/DerivedData/IntelWifi-gfhnygtxrrxdvrdpljclrvgbyeiv/Build/Products/Debug/IntelWifi.kext | base64
