@@ -3,4 +3,5 @@ osx_image: xcode10.1
 script:
 - make build
 - echo 'IntelWifi.tar.xz (base64):'
-- tar cJf - /Users/travis/Library/Developer/Xcode/DerivedData/IntelWifi-gfhnygtxrrxdvrdpljclrvgbyeiv/Build/Products/Debug/IntelWifi.kext | base64
+- cd /Users/travis/Library/Developer/Xcode/DerivedData/IntelWifi-gfhnygtxrrxdvrdpljclrvgbyeiv/Build/Products/Debug/
+- tar cJf - IntelWifi.kext | base64
